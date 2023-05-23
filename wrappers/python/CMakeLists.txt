@@ -55,7 +55,7 @@ pybind11_add_module(pyrealsense2 SHARED python.hpp ${PYRS_CPP})
 # pybind11 version 2.6.1 require find_package to run after pybind11_add_module call,
 # This way the pybind takes the python version set in PYTHON_EXECUTABLE variable.
   find_package(Python REQUIRED COMPONENTS Interpreter Development)
-  set(PYTHON_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages" CACHE PATH "Installation directory for Python bindings")
+  set(PYTHON_INSTALL_DIR "lib/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages" CACHE PATH "Installation directory for Python bindings")
   set(CMAKECONFIG_PY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/pyrealsense2")
 
 target_link_libraries(pyrealsense2 PRIVATE ${DEPENDENCIES})
